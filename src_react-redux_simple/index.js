@@ -3,9 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import store from './store'
-// 批量传递store
 
-import {Provider} from 'react-redux'
+
+import { Provider} from 'react-redux'
+
+// 批量传递store
 ReactDOM.render(
   <Provider store={store}>
     <App />
