@@ -1,7 +1,7 @@
 import React,{Component} from 'react'
 // 要用到store 数据 要用到react-redux connect 进行连接
 import {connect} from 'react-redux'
-import {increment,decrement,asyncAdd} from '../store/actions/count'
+import {increment,decrement,asyncAdd} from '../store/actions'
 
 class Count extends Component {
     add = ()=>{
