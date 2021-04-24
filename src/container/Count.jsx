@@ -15,6 +15,9 @@ class Count extends Component {
                 <button onClick={()=>increment(1)}>+</button>
                 <button onClick={()=>decrement(1)}>-</button>
                 <button onClick={()=>asyncAdd(1,500)}>async + </button>
+                <br/>
+                <br/>
+                <hr/>
             </div>
             
         )
@@ -22,7 +25,7 @@ class Count extends Component {
 }
 
 export default  connect(
-    (state)=>({count:state}),
+    (state)=>({count:state.he}),
     {
         increment,
         decrement,
