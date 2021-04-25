@@ -22,7 +22,7 @@ class Count extends Component {
 }
 
 export default  connect(
-    (state)=>({count:state}),
+    (state)=>({count:state.count}),
     {
         increment,
         decrement,
