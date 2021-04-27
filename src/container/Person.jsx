@@ -10,14 +10,14 @@ class Person extends Component {
 		addPerson({name,age})
 	}
     render(){
-		const {personList} = this.props
+		const {personList,count} = this.props
 		
         return (
 					<div>
 						<input type="text" placeholder="name" ref={(c)=>{this.nameRef = c}}/>
 						<input type="text" placeholder="age"  ref={(c)=>{this.ageRef = c}}/>
 						<button onClick={this.addPerson}>add person</button>
-					<h2>person组件</h2>
+					<h2>person组件--------{count}</h2>
 					{
 						personList.map((p,i)=>{
 							return ( <p key={i}>{p.name}-----------{p.age}</p>	)
@@ -31,6 +31,8 @@ class Person extends Component {
 
 // export default Person
 export default connect(
-	(state)=>({personList:state.ren}),
+	(state)=>({
+		count:state.he,
+		personList:state.ren}),
 	{addPerson}
 )(Person)
