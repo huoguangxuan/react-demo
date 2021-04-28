@@ -1,8 +1,9 @@
 import './App.css';
-import {Route,Switch,Redirect} from 'react-router-dom'
+import {Route,Switch} from 'react-router-dom'
 import MyNavLink from './components/MyNavLink'
 import Home from './components/Home'
 import About from './components/About'
+import Test from './components/Test'
 /**
  * Router 两种
  * 1：BrowserRouter
@@ -16,12 +17,8 @@ function App() {
         <hr></hr>
         <div style={{display:'flex'}}>
           <div style={{width:'100px'}}>
-            {/* 这样也能匹配到home */}
-            {/* <MyNavLink to='/home/a/b'>home</MyNavLink> <br/><br/> */}
-            
-            
-            <MyNavLink to='/home'>home</MyNavLink> <br/><br/>
-            <MyNavLink to='/about'>about</MyNavLink>
+            <MyNavLink to='/duo/home'>home</MyNavLink> <br/><br/>
+            <MyNavLink to='/duo/about'>about</MyNavLink>
           
           </div>
           <div style={{flex:1,backgroundColor:'lightcoral',height:'100%'}}>
@@ -29,13 +26,11 @@ function App() {
               <Route path="/home" component={Test}></Route>
               <Route path="/about" component={About}></Route> */}
               {/* 应用Switch 单一匹配的效率问题*/} 
-              
-              {/* 严格匹配 exact={true}*/}
+
               <Switch>
-                <Route path="/home" component={Home}></Route>
-                <Route path="/about" component={About}></Route>
-                {/* 谁都匹配不到就redirect 兜底用 */}
-                <Redirect to='/about'></Redirect>
+                <Route path="/duo/home" component={Home}></Route>
+                <Route path="/duo/home" component={Test}></Route>
+                <Route path="/duo/about" component={About}></Route>
               </Switch>
           </div>
         </div>

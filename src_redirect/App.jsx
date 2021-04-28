@@ -20,7 +20,7 @@ function App() {
             {/* <MyNavLink to='/home/a/b'>home</MyNavLink> <br/><br/> */}
             
             
-            <MyNavLink to='/home'>home</MyNavLink> <br/><br/>
+            <MyNavLink to='/home/a/b'>home</MyNavLink> <br/><br/>
             <MyNavLink to='/about'>about</MyNavLink>
           
           </div>
@@ -32,8 +32,9 @@ function App() {
               
               {/* 严格匹配 exact={true}*/}
               <Switch>
-                <Route path="/home" component={Home}></Route>
+                <Route exact path="/home" component={Home}></Route>
                 <Route path="/about" component={About}></Route>
+
                 {/* 谁都匹配不到就redirect 兜底用 */}
                 <Redirect to='/about'></Redirect>
               </Switch>
