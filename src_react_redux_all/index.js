@@ -1,17 +1,16 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./App";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import store from './store'
 // 批量传递store
 
-import { BrowserRouter } from "react-router-dom";
-
+import {Provider} from 'react-redux'
 ReactDOM.render(
-  <BrowserRouter>
+  <Provider store={store}>
     <App />
-  </BrowserRouter>,
-  document.getElementById("root")
-);
+  </Provider>,
+document.getElementById('root'));
 // store.subscribe(()=>{
 //   ReactDOM.render(<App />,document.getElementById('root'));
 // })
